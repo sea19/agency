@@ -17,5 +17,8 @@
         "vue": "latest",
         "vue-router": "latest",
         "vuetify-nuxt-module": "^0.18.3"
+    },
+    "devDependencies": {
+        "sass": "^1.79.2"
     }
 }
