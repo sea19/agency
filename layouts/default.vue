@@ -6,6 +6,7 @@
 
         <div class="page-block page-block__main">
             <main class="page-block__content page-main">
+                <LayoutCompanyInfo />
                 <slot />
             </main>
         </div>
