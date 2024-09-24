@@ -24,4 +24,25 @@ export default defineNuxtConfig({
             },
         },
     },
+
+    vuetify: {
+        moduleOptions: {
+            // disableVuetifyStyles: true,
+        },
+
+        vuetifyOptions: {
+            theme: {
+                defaultTheme: 'customTheme',
+
+                themes: {
+                    customTheme: {
+                        dark: false,
+                        colors: {
+                            primary: '#337566',
+                        },
+                    },
+                },
+            },
+        },
+    },
 });
