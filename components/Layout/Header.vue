@@ -9,7 +9,9 @@
         </nuxt-link>
 
         <button class="bag-button">
-            <img src="/assets/icons/bag.svg" alt="Корзина">
+            <UIBadge :content="1">
+                <img src="/assets/icons/bag.svg" alt="Корзина">
+            </UIBadge>
         </button>
 
         <button class="catalog-button">

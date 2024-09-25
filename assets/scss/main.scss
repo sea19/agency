@@ -11,6 +11,11 @@
     src: url('/fonts/Inter/Inter-VariableFont_opsz,wght.ttf');
 }
 
+@font-face {
+    font-family: 'OpenSans';
+    src: url('/fonts/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf');
+}
+
 html {
     font-family: 'Inter', sans-serif;
     font-size: 15px;
