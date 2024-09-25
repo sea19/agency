@@ -7,11 +7,20 @@
             <RatingInfo v-bind="companyRating" />
 
             <UIButton size="large" class="company-info__number-button">Показать номер телефона</UIButton>
+            <UITabs v-model="selectedTab" :tabs="tabs" align-tabs="center" class="company-info__tabs" />
         </template>
     </section>
 </template>
 
 <script setup lang="ts">
+const selectedTab = ref(1);
+
+const tabs = reactive([
+    { value: 1, label: 'Товары и услуги' },
+    { value: 2, label: 'Агенты', text: 5 },
+    { value: 3, label: 'О компании' },
+]);
+
 const { data: companyInfo } = await useFetch('/company/info', {
     query: {
         companyId: 1,
@@ -44,6 +53,11 @@ const { data: companyRating } = await useFetch('/company/rating', {
 
     &__number-button {
         margin: 24px 0 32px 0;
+    }
+
+    &__tabs {
+        width: 100%;
+        overflow-x: auto;
     }
 }
 </style>
