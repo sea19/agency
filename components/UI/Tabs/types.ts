@@ -7,7 +7,6 @@ export interface ITab {
     value: ModelValue | Ref<ModelValue>;
     label?: string | number;
     text?: string | number;
-    route?: string;
 }
 
 export interface IProps extends /* @vue-ignore */ VTabsProps {

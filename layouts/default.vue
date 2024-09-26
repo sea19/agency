@@ -5,7 +5,7 @@
         </div>
 
         <div class="page-block page-subheader">
-            <CompanyInfo />
+            <CompanyInfo class="page-subheader__company-info" />
             <UITabs v-model="selectedTab" :tabs="tabs" align-tabs="center" class="page-subheader__tabs" />
         </div>
 
@@ -22,13 +22,36 @@
 </template>
 
 <script setup lang="ts">
-const selectedTab = ref(1);
+import { useCompanyStore } from '@/store/company';
+
+const companyStore = useCompanyStore();
+// Хардкод id компании
+companyStore.setCompany(1);
+
+const router = useRouter();
+const selectedTab = ref('/');
 
 const tabs = reactive([
-    { value: 1, label: 'Товары и услуги', route: '/' },
-    { value: 2, label: 'Агенты', text: 5, route: '/agents' },
-    { value: 3, label: 'О компании', route: '/about' },
+    { label: 'Товары и услуги', value: '/' },
+    { label: 'Агенты', text: 5, value: '/agents' },
+    { label: 'О компании', value: '/about' },
 ]);
+
+watch(router.currentRoute, () => {
+    const { currentRoute } = router;
+    const { fullPath } = currentRoute.value;
+    if (selectedTab.value === fullPath) return;
+
+    selectedTab.value = fullPath;
+}, { immediate: true });
+
+watch(selectedTab, () => {
+    const { currentRoute } = router;
+    const { fullPath } = currentRoute.value;
+    if (selectedTab.value === fullPath) return;
+
+    router.push(selectedTab.value);
+});
 </script>
 
 <style scoped lang="scss">
@@ -82,6 +105,16 @@ const tabs = reactive([
     .page-block {
         &__content {
             padding: 0 16px;
+        }
+    }
+
+    .page-subheader {
+        &__company-info {
+            display: none;
+        }
+
+        &__tabs {
+            margin: 8px 0;
         }
     }
 }

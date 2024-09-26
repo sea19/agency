@@ -2,8 +2,17 @@
 export default defineNuxtConfig({
     compatibilityDate: '2024-04-03',
     devtools: { enabled: true },
-    modules: ['@nuxt/eslint', 'vuetify-nuxt-module', '@nuxt/icon'],
+    modules: ['@nuxt/eslint', 'vuetify-nuxt-module', '@nuxt/icon', '@pinia/nuxt'],
     css: ['~/assets/scss/main.scss'],
+
+    nitro: {
+        storage: {
+            files: {
+                driver: 'fs',
+                base: './server/static',
+            },
+        },
+    },
 
     eslint: {
         config: {

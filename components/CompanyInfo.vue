@@ -1,7 +1,7 @@
 <template>
     <section class="company-info">
         <template v-if="companyInfo">
-            <img :src="`/img/${companyInfo.imgSrc}`" alt="Логотип компании" class="company-info__logo">
+            <img :src="companyInfo.imageUrl" alt="Логотип компании" class="company-info__logo">
             <h1 class="company-info__name">{{ companyInfo.name }}</h1>
 
             <RatingInfo v-bind="companyRating" />
@@ -12,17 +12,14 @@
 </template>
 
 <script setup lang="ts">
-const { data: companyInfo } = await useFetch('/company/info', {
-    query: {
-        companyId: 1,
-    },
-});
+import { storeToRefs } from 'pinia';
+import { useCompanyStore } from '@/store/company';
 
-const { data: companyRating } = await useFetch('/company/rating', {
-    query: {
-        companyId: 1,
-    },
-});
+const companyStore = useCompanyStore();
+const { companyId } = storeToRefs(companyStore);
+
+const { data: companyInfo } = await useFetch(`/company/${companyId.value}`);
+const { data: companyRating } = await useFetch(`/company/rating/${companyId.value}`);
 </script>
 
 <style scoped lang="scss">
@@ -40,6 +37,10 @@ const { data: companyRating } = await useFetch('/company/rating', {
 
     &__name {
         margin: 24px 0 12px 0;
+
+        font-size: 24px;
+        font-weight: 600;
+        line-height: normal;
     }
 
     &__number-button {

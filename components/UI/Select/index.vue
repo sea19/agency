@@ -1,18 +1,33 @@
 <template>
     <v-select v-model="$value" v-bind="props" menu-icon="" class="ui-select">
         <template #item="itemProps">
-            <slot name="item" v-bind="itemProps" />
+            <slot name="item" v-bind="itemProps">
+                <div class="ui-select-item">
+                    <v-divider v-if="itemProps.item.raw.type === 'divider'" />
+
+                    <v-list-subheader v-else-if="itemProps.item.raw.type === 'subheader'">
+                        <span class="ui-select-item__subheader">{{ itemProps.item.title }}</span>
+                    </v-list-subheader>
+
+                    <v-list-item
+                        v-else
+                        v-bind="itemProps.props"
+                        :disabled="itemProps.item.raw.disabled"
+                        class="ui-select-item__item"
+                    />
+                </div>
+            </slot>
         </template>
 
-        <template #selection="selectionProps">
+        <template v-if="$slots.selection" #selection="selectionProps">
             <slot name="selection" v-bind="selectionProps" />
         </template>
 
-        <template #prepend="prependProps">
+        <template v-if="$slots.prepend" #prepend="prependProps">
             <slot name="prepend" v-bind="prependProps" />
         </template>
 
-        <template #append="appendProps">
+        <template v-if="$slots.append" #append="appendProps">
             <slot name="append" v-bind="appendProps" />
         </template>
 
@@ -21,10 +36,10 @@
                 <div
                     :class="[
                         'ui-select__append-inner-icon',
-                        { 'ui-select__append-inner-icon--active': unref(appendInnerProps.isActive) },
+                        { 'ui-select__append-inner-icon--focused': unref(appendInnerProps.isFocused) },
                     ]"
                 >
-                    <Icon name="icon:dropdown" size="24px" />
+                    <Icon name="icon:arrow-top" size="24px" />
                 </div>
             </slot>
         </template>
@@ -35,6 +50,7 @@
 import type { ModelValue, IProps } from './types';
 
 const props = withDefaults(defineProps<IProps>(), {
+    variant: 'solo',
     noDataText: 'Список пуст',
 });
 
@@ -50,11 +66,38 @@ const $value = defineModel<ModelValue>();
 
         color: $c-gray-4;
 
+        transform: rotate(180deg);
         transition: transform 200ms;
 
-        &--active {
-            transform: rotate(180deg);
+        &--focused {
+            transform: rotate(0deg);
         }
+    }
+
+    .v-field--variant-solo {
+        border: 1px solid $c-gray-7;
+        border-radius: 12px;
+
+        background: $c-gray-6;
+        box-shadow: none;
+    }
+}
+
+.ui-select-item {
+    .v-list-item-title {
+        font-size: 15px;
+        color: $c-black;
+    }
+
+    .v-list-item__content {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    &__subheader {
+        font-size: 13px;
+        font-weight: 500;
     }
 }
 </style>

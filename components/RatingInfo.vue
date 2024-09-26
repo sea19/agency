@@ -20,16 +20,16 @@
 interface IProps {
     isVerified?: boolean;
     score?: number;
-    commentCount?: number;
+    reviewCount?: number;
 }
 
 const props = defineProps<IProps>();
 
 // TODO Дописать утилиту склонения слов
 const comments = computed(() => {
-    if (!props.commentCount) return 'Нет отзывов';
+    if (!props.reviewCount) return 'Нет отзывов';
 
-    return `${props.commentCount} отзывов`;
+    return `${props.reviewCount} отзывов`;
 });
 </script>
 

@@ -1,10 +1,9 @@
 <template>
     <v-tabs v-model="$value" class="ui-tabs">
         <v-tab
-            v-for="{ value, label, text, route } in tabs"
+            v-for="{ value, label, text } in tabs"
             :key="unref(value)"
             :value="value"
-            :to="route"
             class="ui-tab"
         >
             <div class="ui-tab__content">

@@ -67,6 +67,7 @@
     border-radius: 40px;
 
     font-size: 15px;
+    font-weight: 500;
 
     display: flex;
     align-items: center;
@@ -74,8 +75,11 @@
 }
 
 .city-button {
+    width: 152px;
+
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 4px;
 }
 
@@ -87,8 +91,14 @@
 }
 
 .advertising-button {
+    width: 205px;
+
     color: $c-primary;
     font-weight: 500;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .profile-button {
