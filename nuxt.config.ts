@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
     compatibilityDate: '2024-04-03',
     devtools: { enabled: true },
-    modules: ['@nuxt/eslint', 'vuetify-nuxt-module'],
+    modules: ['@nuxt/eslint', 'vuetify-nuxt-module', '@nuxt/icon'],
     css: ['~/assets/scss/main.scss'],
 
     eslint: {
@@ -44,5 +44,14 @@ export default defineNuxtConfig({
                 },
             },
         },
+    },
+
+    icon: {
+        customCollections: [
+            {
+                prefix: 'icon',
+                dir: './assets/icons',
+            },
+        ],
     },
 });
