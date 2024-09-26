@@ -1,6 +1,12 @@
 <template>
     <v-tabs v-model="$value" class="ui-tabs">
-        <v-tab v-for="{ value, label, text } in tabs" :key="unref(value)" :value="value" class="ui-tab">
+        <v-tab
+            v-for="{ value, label, text, route } in tabs"
+            :key="unref(value)"
+            :value="value"
+            :to="route"
+            class="ui-tab"
+        >
             <div class="ui-tab__content">
                 <span>{{ label }}</span>
                 <span v-if="text" class="ui-tab__text">{{ text }}</span>
@@ -12,9 +18,10 @@
 <script setup lang="ts">
 import type { ModelValue, IProps } from './types';
 
-const $value = defineModel<ModelValue>();
-
+defineOptions({ name: 'UITabs' });
 defineProps<IProps>();
+
+const $value = defineModel<ModelValue>();
 </script>
 
 <style lang="scss">
@@ -30,12 +37,14 @@ defineProps<IProps>();
         display: flex;
         gap: 4px;
     }
+
+    &.v-tabs--density-default {
+        --v-tabs-height: 40px;
+    }
 }
 
 .ui-tab {
-
     min-width: auto !important;
-    height: 40px !important;
 
     padding: 8px 12px;
 

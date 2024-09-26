@@ -4,9 +4,13 @@
             <LayoutHeader class="page-block__content" />
         </div>
 
+        <div class="page-block page-subheader">
+            <CompanyInfo />
+            <UITabs v-model="selectedTab" :tabs="tabs" align-tabs="center" class="page-subheader__tabs" />
+        </div>
+
         <div class="page-block page-block__main">
             <main class="page-block__content page-main">
-                <LayoutCompanyInfo />
                 <slot />
             </main>
         </div>
@@ -18,7 +22,13 @@
 </template>
 
 <script setup lang="ts">
+const selectedTab = ref(1);
 
+const tabs = reactive([
+    { value: 1, label: 'Товары и услуги', route: '/' },
+    { value: 2, label: 'Агенты', text: 5, route: '/agents' },
+    { value: 3, label: 'О компании', route: '/about' },
+]);
 </script>
 
 <style scoped lang="scss">
@@ -53,6 +63,18 @@
     &__footer {
         background: $c-gray-1;
         border-top: 1px solid $c-gray-3;
+    }
+}
+
+.page-subheader {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid $c-gray-5;
+
+    &__tabs {
+        margin: 32px 0;
+        width: 100%;
+        overflow-x: auto;
     }
 }
 

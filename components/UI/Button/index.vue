@@ -7,6 +7,8 @@
 <script setup lang="ts">
 import type { IProps, VBtnSlots } from './types';
 
+defineOptions({ name: 'UIButton' });
+
 const props = withDefaults(defineProps<IProps>(), {
     color: 'primary',
     size: 'medium',

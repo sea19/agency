@@ -7,6 +7,8 @@
 <script setup lang="ts">
 import type { IProps } from './types';
 
+defineOptions({ name: 'UIBadge' });
+
 const props = withDefaults(defineProps<IProps>(), {
     color: 'primary',
 });
