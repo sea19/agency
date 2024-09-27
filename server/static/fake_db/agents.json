@@ -6,8 +6,8 @@
         "companyId": 1,
         "description": "Помог справиться с потерей и организовать похороны для 126 семей ну и еще чуть описания, чтобы дойти до конца строки и текст будет отсекаться",
         "imageUrl": "/image/users:user1.webp",
-        "rating": 4.3,
-        "numberReviews": 19,
+        "score": 4.3,
+        "reviewCount": 19,
         "isVerified": true
     },
     {
@@ -17,8 +17,8 @@
         "companyId": 1,
         "description": "Помог справиться с потерей и организовать похороны для 126 семей.",
         "imageUrl": "/image/users:user2.webp",
-        "rating": 0,
-        "numberReviews": 0,
+        "score": 0,
+        "reviewCount": 0,
         "isVerified": true
     },
     {
@@ -28,8 +28,8 @@
         "companyId": 1,
         "description": "Помог справиться с потерей и организовать похороны для 126 семей ну и еще чуть описания, чтобы дойти до конца строки и текст будет отсекаться",
         "imageUrl": "/image/users:user3.webp",
-        "rating": 4.3,
-        "numberReviews": 19,
+        "score": 4.3,
+        "reviewCount": 19,
         "isVerified": false
     },
     {
@@ -39,8 +39,8 @@
         "companyId": 1,
         "description": "Помог справиться с потерей и организовать похороны для 126 семей ну и еще чуть описания, чтобы дойти до конца строки и текст будет отсекаться",
         "imageUrl": "/image/users:user4.webp",
-        "rating": 4.3,
-        "numberReviews": 19,
+        "score": 4.3,
+        "reviewCount": 19,
         "isVerified": true
     },
     {
@@ -50,8 +50,8 @@
         "companyId": 1,
         "description": "Помог справиться с потерей и организовать похороны для 126 семей ну и еще чуть описания, чтобы дойти до конца строки и текст будет отсекаться",
         "imageUrl": "/image/users:user5.webp",
-        "rating": 4.3,
-        "numberReviews": 19,
+        "score": 4.3,
+        "reviewCount": 19,
         "isVerified": false
     },
     {
@@ -61,8 +61,8 @@
         "companyId": 1,
         "description": "Помог справиться с потерей и организовать похороны для 126 семей ну и еще чуть описания, чтобы дойти до конца строки и текст будет отсекаться",
         "imageUrl": "/image/users:user1.webp",
-        "rating": 4.3,
-        "numberReviews": 19,
+        "score": 4.3,
+        "reviewCount": 19,
         "isVerified": true
     }
 ]

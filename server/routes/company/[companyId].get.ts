@@ -1,8 +1,4 @@
-interface ICompany {
-    id: string | number;
-    name: string;
-    imageUrl?: string;
-}
+import type { ICompany } from '@/types/entities';
 
 export default defineEventHandler(async (event) => {
     const companyId = getRouterParam(event, 'companyId');

@@ -16,7 +16,7 @@
         "publicationDate": "10.05.2000",
         "isPromote": true,
         "isHidden": false,
-        "imageUrl": "/image/goods:synthesizer.webp"
+        "imageUrl": "/image/products:synthesizer.webp"
     },
     {
         "id": 2,
@@ -35,7 +35,7 @@
         "publicationDate": "10.05.2000",
         "isPromote": false,
         "isHidden": false,
-        "imageUrl": "/image/goods:car.webp"
+        "imageUrl": "/image/products:car.webp"
     },
     {
         "id": 3,
@@ -54,7 +54,7 @@
         "publicationDate": "10.05.2000",
         "isPromote": false,
         "isHidden": false,
-        "imageUrl": "/image/goods:apartment.webp"
+        "imageUrl": "/image/products:apartment.webp"
     },
     {
         "id": 4,
@@ -73,7 +73,7 @@
         "publicationDate": "10.05.2000",
         "isPromote": false,
         "isHidden": false,
-        "imageUrl": "/image/goods:drums.webp"
+        "imageUrl": "/image/products:drums.webp"
     },
     {
         "id": 5,
@@ -92,7 +92,7 @@
         "publicationDate": "10.05.2000",
         "isPromote": false,
         "isHidden": false,
-        "imageUrl": "/image/goods:cables.webp"
+        "imageUrl": "/image/products:cables.webp"
     },
     {
         "id": 6,
@@ -111,7 +111,7 @@
         "publicationDate": "10.05.2000",
         "isPromote": false,
         "isHidden": false,
-        "imageUrl": "/image/goods:motorbike.webp"
+        "imageUrl": "/image/products:motorbike.webp"
     },
     {
         "id": 7,
@@ -130,7 +130,7 @@
         "publicationDate": "10.05.2000",
         "isPromote": false,
         "isHidden": false,
-        "imageUrl": "/image/goods:motorbike2.webp"
+        "imageUrl": "/image/products:motorbike2.webp"
     },
     {
         "id": 8,
@@ -149,6 +149,6 @@
         "publicationDate": "10.05.2000",
         "isPromote": false,
         "isHidden": true,
-        "imageUrl": "/image/goods:vacuum.webp"
+        "imageUrl": "/image/products:vacuum.webp"
     }
 ]

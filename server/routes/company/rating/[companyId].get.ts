@@ -1,10 +1,4 @@
-interface ICompanyRating {
-    id: string | number;
-    companyId: string | number;
-    score?: number;
-    reviewCount?: number;
-    isVerified?: boolean;
-}
+import type { ICompanyRating } from '@/types/entities';
 
 export default defineEventHandler(async (event) => {
     const companyId = getRouterParam(event, 'companyId');

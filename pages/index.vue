@@ -1,15 +1,24 @@
 <template>
-    <section class="page-goods">
+    <section class="page-products">
         <UISelect
             v-model="selectedCategory"
             :items="categories"
             width="438px"
-            class="page-goods__select"
+            class="page-products__select"
         />
     </section>
 </template>
 
 <script setup lang="ts">
+import { storeToRefs } from 'pinia';
+import { useCompanyStore } from '@/store/company';
+
+const companyStore = useCompanyStore();
+const { companyId } = storeToRefs(companyStore);
+
+const { data: companyInfo } = await useFetch(`/company/${companyId.value}`);
+const { data: companyRating } = await useFetch(`/company/rating/${companyId.value}`);
+
 const selectedCategory = ref('all');
 
 const categories = reactive([
@@ -26,7 +35,7 @@ const categories = reactive([
 </script>
 
 <style scoped lang="scss">
-.page-goods {
+.page-products {
     height: 100%;
 
     display: flex;
