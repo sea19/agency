@@ -1,5 +1,6 @@
-import type { Id } from '@/types/Id';
-import type { ICategory } from '@/types/entities';
+import type { Id } from '~/types/Id';
+import type { ICategory } from '~/types/entities';
+import type { ProductStatus } from '~/types/enums';
 
 export interface IProduct {
     id: Id;
@@ -10,7 +11,6 @@ export interface IProduct {
     price?: number;
     views?: number;
     publicationDate?: string;
-    isPromote?: boolean;
-    isHidden?: boolean;
+    status?: ProductStatus;
     imageUrl?: string;
 }

@@ -22,11 +22,11 @@
 </template>
 
 <script setup lang="ts">
-import { useCompanyStore } from '@/store/company';
+import { useCompanyStore } from '~/store/company';
 
 const companyStore = useCompanyStore();
 // Хардкод id компании
-companyStore.setCompany(1);
+companyStore.setCompanyId(1);
 
 const router = useRouter();
 const selectedTab = ref('/');
@@ -74,13 +74,13 @@ watch(selectedTab, () => {
     }
 
     &__header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+
         height: 64px;
 
         background: $c-orange;
-    }
-
-    &__main {
-        height: 100%;
     }
 
     &__footer {

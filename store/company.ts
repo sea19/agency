@@ -1,13 +1,14 @@
 import { defineStore } from 'pinia';
+import type { Id } from '~/types/Id';
 
-type Company = string | number | null;
+type CompanyId = Id | null;
 
 export const useCompanyStore = defineStore('companyStore', () => {
-    const companyId = ref<Company>(null);
+    const companyId = ref<CompanyId>(null);
 
-    function setCompany(value: Company) {
+    function setCompanyId(value: CompanyId) {
         companyId.value = value;
     }
 
-    return { setCompany, companyId };
+    return { setCompanyId, companyId };
 });

@@ -1,4 +1,4 @@
-import type { ICompany } from '@/types/entities';
+import type { ICompany } from '~/types/entities';
 
 export default defineEventHandler(async (event) => {
     const companyId = getRouterParam(event, 'companyId');

@@ -66,7 +66,7 @@ const $value = defineModel<ModelValue>();
     }
 
     &.v-tab--selected {
-        border-color: $c-black;
+        border-color: $c-black-1;
         transition: border-color 150ms;
 
         .v-tab__slider {

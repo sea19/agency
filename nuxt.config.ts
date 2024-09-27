@@ -2,7 +2,8 @@
 export default defineNuxtConfig({
     compatibilityDate: '2024-04-03',
     devtools: { enabled: true },
-    modules: ['@nuxt/eslint', 'vuetify-nuxt-module', '@nuxt/icon', '@pinia/nuxt'],
+    modules: ['@nuxt/eslint', 'vuetify-nuxt-module', '@nuxt/icon', '@pinia/nuxt', 'dayjs-nuxt'],
+
     css: ['~/assets/scss/main.scss'],
 
     nitro: {
@@ -35,10 +36,6 @@ export default defineNuxtConfig({
     },
 
     vuetify: {
-        moduleOptions: {
-            // disableVuetifyStyles: true,
-        },
-
         vuetifyOptions: {
             theme: {
                 defaultTheme: 'customTheme',
@@ -62,5 +59,11 @@ export default defineNuxtConfig({
                 dir: './assets/icons',
             },
         ],
+    },
+
+    dayjs: {
+        locales: ['en', 'ru'],
+        defaultLocale: 'ru',
+        plugins: ['customParseFormat'],
     },
 });

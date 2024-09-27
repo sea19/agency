@@ -86,7 +86,7 @@ const $value = defineModel<ModelValue>();
 .ui-select-item {
     .v-list-item-title {
         font-size: 15px;
-        color: $c-black;
+        color: $c-black-1;
     }
 
     .v-list-item__content {

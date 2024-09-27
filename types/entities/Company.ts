@@ -1,4 +1,4 @@
-import type { Id } from '@/types/Id';
+import type { Id } from '~/types/Id';
 
 export interface ICompany {
     id: Id;

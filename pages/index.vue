@@ -6,37 +6,61 @@
             width="438px"
             class="page-products__select"
         />
+
+        <section class="page-products__grid">
+            <ProductCard v-for="product in filteredProducts" v-bind="product" :key="product.id" class="product-card" />
+        </section>
     </section>
 </template>
 
 <script setup lang="ts">
 import { storeToRefs } from 'pinia';
-import { useCompanyStore } from '@/store/company';
+import { useCompanyStore } from '~/store/company';
+
+import { mapCategory } from '~/helpers/mapCategory';
+import type { ICategoryElement, ISubcategoryElement } from '~/helpers/mapCategory';
 
 const companyStore = useCompanyStore();
 const { companyId } = storeToRefs(companyStore);
 
-const { data: companyInfo } = await useFetch(`/company/${companyId.value}`);
-const { data: companyRating } = await useFetch(`/company/rating/${companyId.value}`);
+const { data: products } = await useFetch(`/products/${companyId.value}`);
 
 const selectedCategory = ref('all');
 
-const categories = reactive([
-    { title: 'Все товары и услуги', value: 'all' },
+interface CategoryFilterItem {
+    value: string;
+    title: string;
+}
 
-    { title: 'Категория 1', type: 'subheader' },
-    { title: 'Гробы', value: 'coffin', props: { subtitle: 5 } },
-    { title: 'Урны', value: 'urn', props: { subtitle: 12 } },
+type FilterElement = CategoryFilterItem | ICategoryElement | ISubcategoryElement;
 
-    { title: 'Категория 2', type: 'subheader' },
-    { title: 'Тапки', value: 'slippers', props: { subtitle: 2 } },
-    { title: 'Покрывала', value: 'cover', props: { subtitle: 1 } },
-]);
+const categories = computed(() => {
+    const result: FilterElement[] = [{ title: 'Все товары и услуги', value: 'all' }];
+
+    const productList = products.value ?? [];
+    if (!productList?.length) return result;
+
+    const categoryList = mapCategory(productList);
+    result.push(...categoryList);
+
+    return result;
+});
+
+const filteredProducts = computed(() => {
+    const productList = products.value;
+
+    if (!productList?.length) return [];
+    if (selectedCategory.value === 'all') return productList;
+
+    return productList.filter(({ subcategory }) => subcategory?.id === selectedCategory.value);
+});
 </script>
 
 <style scoped lang="scss">
 .page-products {
     height: 100%;
+
+    margin-bottom: 64px;
 
     display: flex;
     flex-direction: column;
@@ -45,6 +69,14 @@ const categories = reactive([
     &__select {
         max-height: 56px;
         margin: 25px 0;
+    }
+
+    &__grid {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        gap: 24px;
     }
 }
 </style>

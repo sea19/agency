@@ -25,7 +25,6 @@ interface IProps {
 
 const props = defineProps<IProps>();
 
-// TODO Дописать утилиту склонения слов
 const comments = computed(() => {
     if (!props.reviewCount) return 'Нет отзывов';
 

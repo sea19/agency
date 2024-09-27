@@ -60,7 +60,7 @@
 
 .copyright,
 .language-button {
-    color: $c-black;
+    color: $c-black-1;
 }
 
 .language-button {

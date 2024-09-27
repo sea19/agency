@@ -1,6 +1,10 @@
 <template>
     <v-badge v-bind="props" class="ui-badge">
         <slot />
+
+        <template #badge>
+            <slot name="badge" />
+        </template>
     </v-badge>
 </template>
 

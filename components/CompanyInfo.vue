@@ -13,7 +13,7 @@
 
 <script setup lang="ts">
 import { storeToRefs } from 'pinia';
-import { useCompanyStore } from '@/store/company';
+import { useCompanyStore } from '~/store/company';
 
 const companyStore = useCompanyStore();
 const { companyId } = storeToRefs(companyStore);

@@ -4,7 +4,7 @@
         "companyId": 1,
         "name": "Сlavia Nord Grand сценическое цифровое пианино",
         "category": {
-            "id": 1,
+            "id": 2,
             "name": "Категория 2"
         },
         "subcategory": {
@@ -13,9 +13,8 @@
         },
         "price": 450500,
         "views": 750,
-        "publicationDate": "10.05.2000",
-        "isPromote": true,
-        "isHidden": false,
+        "publicationDate": "20.09.2024",
+        "status": "promote",
         "imageUrl": "/image/products:synthesizer.webp"
     },
     {
@@ -27,14 +26,13 @@
             "name": "Категория 1"
         },
         "subcategory": {
-            "id": 1,
+            "id": 4,
             "name": "Гробы"
         },
         "price": 3285000,
         "views": 255,
-        "publicationDate": "10.05.2000",
-        "isPromote": false,
-        "isHidden": false,
+        "publicationDate": "26.09.2024",
+        "status": "default",
         "imageUrl": "/image/products:car.webp"
     },
     {
@@ -46,14 +44,13 @@
             "name": "Категория 2"
         },
         "subcategory": {
-            "id": 4,
-            "name": "Покрывало"
+            "id": 5,
+            "name": "Покрывала"
         },
         "price": 4800000,
         "views": 255,
-        "publicationDate": "10.05.2000",
-        "isPromote": false,
-        "isHidden": false,
+        "publicationDate": "27.09.2024",
+        "status": "default",
         "imageUrl": "/image/products:apartment.webp"
     },
     {
@@ -65,14 +62,13 @@
             "name": "Категория 1"
         },
         "subcategory": {
-            "id": 2,
+            "id": 6,
             "name": "Урны"
         },
         "price": 7500,
         "views": 255,
-        "publicationDate": "10.05.2000",
-        "isPromote": false,
-        "isHidden": false,
+        "publicationDate": "25.09.2024",
+        "status": "default",
         "imageUrl": "/image/products:drums.webp"
     },
     {
@@ -89,9 +85,8 @@
         },
         "price": 7500,
         "views": 255,
-        "publicationDate": "10.05.2000",
-        "isPromote": false,
-        "isHidden": false,
+        "publicationDate": "03.09.2024",
+        "status": "default",
         "imageUrl": "/image/products:cables.webp"
     },
     {
@@ -103,14 +98,13 @@
             "name": "Категория 1"
         },
         "subcategory": {
-            "id": 1,
+            "id": 4,
             "name": "Гробы"
         },
         "price": 217500,
         "views": 255,
-        "publicationDate": "10.05.2000",
-        "isPromote": false,
-        "isHidden": false,
+        "publicationDate": "27.09.2024",
+        "status": "default",
         "imageUrl": "/image/products:motorbike.webp"
     },
     {
@@ -122,14 +116,13 @@
             "name": "Категория 1"
         },
         "subcategory": {
-            "id": 1,
+            "id": 4,
             "name": "Гробы"
         },
         "price": 17900,
         "views": 255,
-        "publicationDate": "10.05.2000",
-        "isPromote": false,
-        "isHidden": false,
+        "publicationDate": "27.09.2024",
+        "status": "default",
         "imageUrl": "/image/products:motorbike2.webp"
     },
     {
@@ -141,14 +134,13 @@
             "name": "Категория 1"
         },
         "subcategory": {
-            "id": 2,
+            "id": 6,
             "name": "Урны"
         },
         "price": 7500,
         "views": 255,
-        "publicationDate": "10.05.2000",
-        "isPromote": false,
-        "isHidden": true,
+        "publicationDate": "27.09.2024",
+        "status": "hidden",
         "imageUrl": "/image/products:vacuum.webp"
     }
 ]

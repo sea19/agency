@@ -1,4 +1,4 @@
-import type { IAgent } from '@/types/entities';
+import type { IAgent } from '~/types/entities';
 
 export default defineEventHandler(async (event) => {
     const companyId = getRouterParam(event, 'companyId');
