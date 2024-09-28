@@ -18,6 +18,7 @@
 </template>
 
 <script setup lang="ts">
+import { getNoun } from '~/utils';
 import type { IRating } from '~/types/entities';
 
 type Props = Partial<IRating>;
@@ -25,9 +26,12 @@ type Props = Partial<IRating>;
 const props = defineProps<Props>();
 
 const comments = computed(() => {
-    if (!props.reviewCount) return 'Нет отзывов';
+    const { reviewCount } = props;
+    if (!reviewCount) return 'Нет отзывов';
 
-    return `${props.reviewCount} отзывов`;
+    const pluralText = getNoun(reviewCount, 'отзыв', 'отзыва', 'отзывов');
+
+    return `${reviewCount} ${pluralText}`;
 });
 </script>
 

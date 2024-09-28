@@ -18,12 +18,14 @@
         "@vueuse/core": "^11.1.0",
         "@vueuse/nuxt": "^11.1.0",
         "dayjs-nuxt": "^2.1.11",
+        "jsonwebtoken": "^9.0.2",
         "nuxt": "^3.13.0",
         "vue": "latest",
         "vue-router": "latest",
         "vuetify-nuxt-module": "^0.18.3"
     },
     "devDependencies": {
+        "@types/jsonwebtoken": "^9.0.7",
         "sass": "^1.79.2"
     },
     "overrides": {

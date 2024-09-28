@@ -8,7 +8,7 @@
             <h1 class="logo">Annoncé</h1>
         </nuxt-link>
 
-        <button class="bag-button">
+        <button v-if="isAuthorized" class="bag-button">
             <UIBadge :content="1">
                 <img src="/assets/icons/bag.svg" alt="Корзина">
             </UIBadge>
@@ -26,17 +26,25 @@
 
         <v-divider :thickness="1" class="divider" vertical />
 
-        <button class="advertising-button">Разместить объявление</button>
+        <button v-if="isAuthorized" class="advertising-button">Разместить объявление</button>
 
-        <button class="profile-button">
+        <button v-if="isAuthorized" class="profile-button">
             <img src="/assets/icons/burger-menu.svg" alt="Меню">
             <img src="/assets/img/avatar.webp" alt="Аватар" class="avatar">
         </button>
+
+        <nuxt-link v-else to="/login" class="login-button">
+            <button>Войти</button>
+        </nuxt-link>
     </header>
 </template>
 
 <script setup lang="ts">
+import { storeToRefs } from 'pinia';
+import { useAuthStore } from '~/store/auth';
 
+const companyStore = useAuthStore();
+const { isAuthorized } = storeToRefs(companyStore);
 </script>
 
 <style scoped lang="scss">
@@ -121,6 +129,11 @@
 .menu-button,
 .bag-button {
     display: none;
+}
+
+.login-button {
+    color: $c-primary;
+    font-weight: 500;
 }
 
 @media screen and (max-width: 950px) {

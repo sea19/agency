@@ -6,7 +6,10 @@
 
         <div class="page-block page-subheader">
             <CompanyInfo show-phone-button class="page-subheader__company-info" />
-            <UITabs v-model="selectedTab" :tabs="tabs" align-tabs="center" class="page-subheader__tabs" />
+
+            <div class="page-subheader__tabs">
+                <UITabs v-model="selectedTab" :tabs="tabs" align-tabs="center" />
+            </div>
         </div>
 
         <div class="page-block page-block__main">
@@ -50,7 +53,7 @@ watch(selectedTab, () => {
     const { fullPath } = currentRoute.value;
     if (selectedTab.value === fullPath) return;
 
-    router.push(selectedTab.value);
+    navigateTo(selectedTab.value);
 });
 </script>
 
