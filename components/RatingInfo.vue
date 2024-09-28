@@ -2,9 +2,8 @@
     <div class="rating-info">
         <template v-if="isVerified">
             <img src="/assets/icons/premium.svg" alt="Проверено">
-            <slot name="verify-text">
-                <span>Документы проверены</span>
-            </slot>
+            <span class="verify-text verify-text--lg">Документы проверены</span>
+            <span class="verify-text verify-text--sm">Проверен</span>
             <span>•</span>
         </template>
 
@@ -37,5 +36,23 @@ const comments = computed(() => {
     display: flex;
     align-items: center;
     gap: 4px;
+}
+
+.verify-text {
+    &--sm {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .verify-text {
+        &--sm {
+            display: block;
+        }
+
+        &--lg {
+            display: none;
+        }
+    }
 }
 </style>

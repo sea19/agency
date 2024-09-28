@@ -4,12 +4,7 @@
 
         <header class="card-header">
             <h4 class="card-header__name">{{ fullName }}</h4>
-            <RatingInfo :score="score" :is-verified="isVerified" :review-count="reviewCount">
-                <template #verify-text>
-                    <span class="verify-text verify-text--lg">Документы проверены</span>
-                    <span class="verify-text verify-text--sm">Проверен</span>
-                </template>
-            </RatingInfo>
+            <RatingInfo :score="score" :is-verified="isVerified" :review-count="reviewCount" />
         </header>
 
         <p class="agent-card__description">{{ description }}</p>
@@ -70,12 +65,6 @@ const fullName = computed(() => `${props.firstName} ${props.lastName}`);
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 3;
     }
-
-    .verify-text {
-        &--sm {
-            display: none;
-        }
-    }
 }
 
 .card-header {
@@ -108,16 +97,6 @@ const fullName = computed(() => `${props.firstName} ${props.lastName}`);
             grid-column-start: span 2;
 
             -webkit-line-clamp: 4;
-        }
-
-        .verify-text {
-            &--sm {
-                display: block;
-            }
-
-            &--lg {
-                display: none;
-            }
         }
     }
 
