@@ -3,7 +3,6 @@
         <UISelect
             v-model="selectedCategory"
             :items="categories"
-            width="438px"
             class="page-products__select"
         />
 
@@ -68,6 +67,9 @@ const filteredProducts = computed(() => {
 
     &__select {
         max-height: 56px;
+        max-width: 438px;
+        width: 100%;
+
         margin: 25px 0;
     }
 
@@ -77,6 +79,16 @@ const filteredProducts = computed(() => {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
         gap: 24px;
+    }
+
+    @media screen and (max-width: 950px) {
+        padding: 0 16px;
+    }
+
+    @media screen and (max-width: 425px) {
+        &__grid {
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        }
     }
 }
 </style>

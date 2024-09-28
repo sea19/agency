@@ -2,7 +2,7 @@
     <v-badge v-bind="props" class="ui-badge">
         <slot />
 
-        <template #badge>
+        <template v-if="$slots.badge" #badge>
             <slot name="badge" />
         </template>
     </v-badge>

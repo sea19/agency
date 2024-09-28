@@ -1,13 +1,11 @@
 import type { Id } from '~/types/Id';
+import type { IRating } from '~/types/entities';
 
-export interface IAgent {
+export interface IAgent extends Partial<IRating> {
     id: Id;
     companyId: Id;
-    name: string;
-    surname: string;
+    firstName: string;
+    lastName: string;
     description?: string;
     imageUrl?: string;
-    score?: number;
-    reviewCount?: number;
-    isVerified?: boolean;
 }

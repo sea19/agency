@@ -2,7 +2,9 @@
     <div class="rating-info">
         <template v-if="isVerified">
             <img src="/assets/icons/premium.svg" alt="Проверено">
-            <span>Документы проверены</span>
+            <slot name="verify-text">
+                <span>Документы проверены</span>
+            </slot>
             <span>•</span>
         </template>
 
@@ -17,13 +19,11 @@
 </template>
 
 <script setup lang="ts">
-interface IProps {
-    isVerified?: boolean;
-    score?: number;
-    reviewCount?: number;
-}
+import type { IRating } from '~/types/entities';
 
-const props = defineProps<IProps>();
+type Props = Partial<IRating>;
+
+const props = defineProps<Props>();
 
 const comments = computed(() => {
     if (!props.reviewCount) return 'Нет отзывов';

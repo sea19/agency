@@ -114,8 +114,12 @@ watch(selectedTab, () => {
         }
 
         &__tabs {
-            margin: 8px 0;
+            margin: 8px 16px;
         }
+    }
+
+    .page-main {
+        padding: 0;
     }
 }
 </style>

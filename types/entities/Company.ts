@@ -1,4 +1,5 @@
 import type { Id } from '~/types/Id';
+import type { IRating } from '~/types/entities';
 
 export interface ICompany {
     id: Id;
@@ -6,12 +7,9 @@ export interface ICompany {
     imageUrl?: string;
 }
 
-export interface ICompanyRating {
+export interface ICompanyRating extends Partial<IRating> {
     id: Id;
     companyId: Id;
-    score?: number;
-    reviewCount?: number;
-    isVerified?: boolean;
 }
 
 export interface ICompanyInfo {
