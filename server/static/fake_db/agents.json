@@ -5,7 +5,7 @@
         "lastName": "Хитрый",
         "companyId": 1,
         "description": "Помог справиться с потерей и организовать похороны для 126 семей ну и еще чуть описания, чтобы дойти до конца строки и текст будет отсекаться",
-        "imageUrl": "/image/users:user1.webp",
+        "imageUrl": "image/users:user1.webp",
         "score": 4.3,
         "reviewCount": 19,
         "isVerified": true
@@ -16,7 +16,7 @@
         "lastName": "Землеперекопский",
         "companyId": 1,
         "description": "Помог справиться с потерей и организовать похороны для 126 семей.",
-        "imageUrl": "/image/users:user2.webp",
+        "imageUrl": "image/users:user2.webp",
         "score": 0,
         "reviewCount": 0,
         "isVerified": true
@@ -27,7 +27,7 @@
         "lastName": "Сумкин",
         "companyId": 1,
         "description": "Помог справиться с потерей и организовать похороны для 126 семей ну и еще чуть описания, чтобы дойти до конца строки и текст будет отсекаться",
-        "imageUrl": "/image/users:user3.webp",
+        "imageUrl": "image/users:user3.webp",
         "score": 4.3,
         "reviewCount": 19,
         "isVerified": false
@@ -38,7 +38,7 @@
         "lastName": "Копушин",
         "companyId": 1,
         "description": "Помог справиться с потерей и организовать похороны для 126 семей ну и еще чуть описания, чтобы дойти до конца строки и текст будет отсекаться",
-        "imageUrl": "/image/users:user4.webp",
+        "imageUrl": "image/users:user4.webp",
         "score": 4.3,
         "reviewCount": 19,
         "isVerified": true
@@ -49,7 +49,7 @@
         "lastName": "Кусакин",
         "companyId": 1,
         "description": "Помог справиться с потерей и организовать похороны для 126 семей ну и еще чуть описания, чтобы дойти до конца строки и текст будет отсекаться",
-        "imageUrl": "/image/users:user5.webp",
+        "imageUrl": "image/users:user5.webp",
         "score": 4.3,
         "reviewCount": 19,
         "isVerified": false
@@ -60,7 +60,7 @@
         "lastName": "Землеперекопская",
         "companyId": 1,
         "description": "Помог справиться с потерей и организовать похороны для 126 семей ну и еще чуть описания, чтобы дойти до конца строки и текст будет отсекаться",
-        "imageUrl": "/image/users:user6.webp",
+        "imageUrl": "image/users:user6.webp",
         "score": 4.3,
         "reviewCount": 19,
         "isVerified": true

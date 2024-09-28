@@ -15,7 +15,7 @@
         "views": 750,
         "publicationDate": "20.09.2024",
         "status": "promote",
-        "imageUrl": "/image/products:synthesizer.webp"
+        "imageUrl": "image/products:synthesizer.webp"
     },
     {
         "id": 2,
@@ -33,7 +33,7 @@
         "views": 255,
         "publicationDate": "26.09.2024",
         "status": "default",
-        "imageUrl": "/image/products:car.webp"
+        "imageUrl": "image/products:car.webp"
     },
     {
         "id": 3,
@@ -51,7 +51,7 @@
         "views": 255,
         "publicationDate": "27.09.2024",
         "status": "default",
-        "imageUrl": "/image/products:apartment.webp"
+        "imageUrl": "image/products:apartment.webp"
     },
     {
         "id": 4,
@@ -69,7 +69,7 @@
         "views": 255,
         "publicationDate": "25.09.2024",
         "status": "default",
-        "imageUrl": "/image/products:drums.webp"
+        "imageUrl": "image/products:drums.webp"
     },
     {
         "id": 5,
@@ -87,7 +87,7 @@
         "views": 255,
         "publicationDate": "03.09.2024",
         "status": "default",
-        "imageUrl": "/image/products:cables.webp"
+        "imageUrl": "image/products:cables.webp"
     },
     {
         "id": 6,
@@ -105,7 +105,7 @@
         "views": 255,
         "publicationDate": "27.09.2024",
         "status": "default",
-        "imageUrl": "/image/products:motorbike.webp"
+        "imageUrl": "image/products:motorbike.webp"
     },
     {
         "id": 7,
@@ -123,7 +123,7 @@
         "views": 255,
         "publicationDate": "27.09.2024",
         "status": "default",
-        "imageUrl": "/image/products:motorbike2.webp"
+        "imageUrl": "image/products:motorbike2.webp"
     },
     {
         "id": 8,
@@ -141,6 +141,6 @@
         "views": 255,
         "publicationDate": "27.09.2024",
         "status": "hidden",
-        "imageUrl": "/image/products:vacuum.webp"
+        "imageUrl": "image/products:vacuum.webp"
     }
 ]
