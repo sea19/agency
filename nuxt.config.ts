@@ -2,7 +2,14 @@
 export default defineNuxtConfig({
     compatibilityDate: '2024-04-03',
     devtools: { enabled: true },
-    modules: ['@nuxt/eslint', 'vuetify-nuxt-module', '@nuxt/icon', '@pinia/nuxt', 'dayjs-nuxt'],
+    modules: [
+        '@nuxt/eslint',
+        '@vueuse/nuxt',
+        'vuetify-nuxt-module',
+        'dayjs-nuxt',
+        '@nuxt/icon',
+        '@pinia/nuxt',
+    ],
 
     css: ['~/assets/scss/main.scss'],
 
