@@ -5,7 +5,7 @@
         </div>
 
         <div class="page-block page-subheader">
-            <CompanyInfo class="page-subheader__company-info" />
+            <CompanyInfo show-phone-button class="page-subheader__company-info" />
             <UITabs v-model="selectedTab" :tabs="tabs" align-tabs="center" class="page-subheader__tabs" />
         </div>
 

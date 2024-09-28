@@ -3,7 +3,7 @@
         <img :src="imageUrl" :alt="fullName" class="agent-card__image">
 
         <header class="card-header">
-            <h4 class="card-header__name">{{ fullName }}</h4>
+            <h2 class="card-header__name">{{ fullName }}</h2>
             <RatingInfo :score="score" :is-verified="isVerified" :review-count="reviewCount" />
         </header>
 
@@ -71,12 +71,6 @@ const fullName = computed(() => `${props.firstName} ${props.lastName}`);
     display: flex;
     flex-direction: column;
     gap: 4px;
-
-    &__name {
-        font-size: 24px;
-        font-weight: 600;
-        line-height: 28px;
-    }
 }
 
 @media screen and (max-width: 768px) {

@@ -39,7 +39,7 @@
                         { 'ui-select__append-inner-icon--focused': unref(appendInnerProps.isFocused) },
                     ]"
                 >
-                    <Icon name="icon:arrow-top" size="24px" />
+                    <Icon name="icon:arrow-top-filled" size="24px" />
                 </div>
             </slot>
         </template>

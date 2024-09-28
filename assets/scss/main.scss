@@ -28,3 +28,19 @@ body,
 #__nuxt {
   height: 100vh;
 }
+
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 28px;
+
+    margin-bottom: 8px;
+}
+
+
+@media screen and (max-width: 768px) {
+    h2 {
+        font-size: 20px;
+        line-height: 24px;
+    }
+}

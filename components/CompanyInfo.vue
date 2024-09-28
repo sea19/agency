@@ -6,7 +6,13 @@
 
             <RatingInfo v-bind="companyRating" />
 
-            <UIButton size="large" class="company-info__number-button">Показать номер телефона</UIButton>
+            <UIButton
+                v-if="showPhoneButton"
+                size="large"
+                class="company-info__number-button"
+            >
+                Показать номер телефона
+            </UIButton>
         </template>
     </section>
 </template>
@@ -14,6 +20,12 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia';
 import { useCompanyStore } from '~/store/company';
+
+interface IProps {
+    showPhoneButton?: boolean;
+}
+
+defineProps<IProps>();
 
 const companyStore = useCompanyStore();
 const { companyId } = storeToRefs(companyStore);
