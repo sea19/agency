@@ -55,12 +55,6 @@ const comments = computed(() => {
     }
 }
 
-.icon-premium {
-    &__check {
-        stroke: $c-gray-1;
-    }
-}
-
 @media screen and (max-width: 768px) {
     .verify-text {
         &--sm {
