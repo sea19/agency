@@ -1,75 +1,45 @@
-# Nuxt 3 Minimal Starter
+# Тестовое задание Frontend
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Проект был выполнен в рамках тестового задания.
 
-## Setup
+| Используемая технология | Версия |
+|-|-|
+| [node](https://nodejs.org) | ^20.17.0 |
+| npm | _bundled with node_ |
+| [vue](https://vuejs.org)   | ^3.5.10   |
+| [nuxt](https://nuxt.com)   | ^3.13.0   |
 
-Make sure to install the dependencies:
+## Настройки
+
+Убедитесь в том, что зависимости установлены:
 
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+## Разработка
 
-Start the development server on `http://localhost:3000`:
+Запустите сервер разработки на `http://localhost:3000`:
 
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+## Сборка
 
-Build the application for production:
+Сборка приложения:
 
 ```bash
-# npm
 npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
 ```
 
-Locally preview production build:
+Локально просмотреть сборку:
 
 ```bash
-# npm
 npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
 ```
+## Авторизация
+Дефолтные учетные данные для входа:
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+username: ***admin***  
+password: ***secret***
