@@ -100,14 +100,14 @@ watch(selectedTab, () => {
 
     &__footer {
         background: $c-gray-1;
-        border-top: 2px solid $c-gray-3;
+        border-top: 1px solid $c-gray-3;
     }
 }
 
 .page-subheader {
     display: flex;
     flex-direction: column;
-    border-bottom: 2px solid $c-gray-5;
+    border-bottom: 1px solid $c-gray-5;
 
     &__tabs {
         margin: 32px 0;
