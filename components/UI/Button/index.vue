@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import type { IProps, VBtnSlots } from './types';
+import type { IProps } from './types';
 
 defineOptions({ name: 'UIButton' });
 
@@ -15,8 +15,6 @@ const props = withDefaults(defineProps<IProps>(), {
     variant: 'flat',
     rounded: 'medium',
 });
-
-defineSlots<VBtnSlots>();
 
 const buttonPadding = computed(() => {
     switch (props.size) {

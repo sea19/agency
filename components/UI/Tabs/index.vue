@@ -57,10 +57,6 @@ const $value = defineModel<ModelValue>();
         gap: 4px;
     }
 
-    &__label {
-
-    }
-
     &__text {
         color: $c-gray-4;
     }

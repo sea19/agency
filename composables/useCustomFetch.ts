@@ -1,6 +1,10 @@
 import type { UseFetchOptions } from 'nuxt/app';
 import { useAuthStore } from '~/store/auth';
 
+/**
+ * Кастомная обертка над `useFetch`.
+ * @see https://nuxt.com/docs/api/composables/use-fetch
+ */
 export function useCustomFetch<T>(
     url: string | (() => string),
     options: UseFetchOptions<T> = {},
