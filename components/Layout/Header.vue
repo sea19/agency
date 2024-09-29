@@ -3,7 +3,7 @@
         <v-menu>
             <template #activator="{ props }">
                 <button v-bind="props" class="menu-button">
-                    <img src="/assets/icons/burger-menu.svg" alt="Меню">
+                    <icon name="icon:burger-menu" size="24px" />
                 </button>
             </template>
 
@@ -17,18 +17,18 @@
         <client-only>
             <button v-if="isAuthenticated" class="bag-button">
                 <UIBadge :content="1">
-                    <img src="/assets/icons/bag.svg" alt="Корзина">
+                    <icon name="icon:bag" size="24px" />
                 </UIBadge>
             </button>
         </client-only>
 
         <button class="catalog-button">
-            <img src="/assets/icons/category.svg" alt="Категории">
+            <icon name="icon:category" size="24px" />
             <span>Все категории</span>
         </button>
 
         <button class="city-button">
-            <img src="/assets/icons/location.svg" alt="Категории">
+            <icon name="icon:location" size="16px" />
             <span>Ростов-на-Дону</span>
         </button>
 
@@ -40,7 +40,7 @@
             <v-menu v-if="isAuthenticated">
                 <template #activator="{ props }">
                     <button v-bind="props" class="profile-button">
-                        <img src="/assets/icons/burger-menu.svg" alt="Меню">
+                        <icon name="icon:burger-menu" size="24px" />
                         <img src="/assets/img/avatar.webp" alt="Аватар" class="avatar">
                     </button>
                 </template>

@@ -26,7 +26,7 @@
 
                 <li class="sitemap__element sitemap__element--mobile">
                     <button class="language-button">
-                        <img src="/assets/icons/flag.svg" alt="Язык">
+                        <icon name="icon:flag" size="18px" />
                         <span>Русский</span>
                     </button>
                 </li>

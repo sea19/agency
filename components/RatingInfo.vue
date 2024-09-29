@@ -1,14 +1,14 @@
 <template>
     <div class="rating-info">
         <template v-if="isVerified">
-            <img src="/assets/icons/premium.svg" alt="Проверено">
+            <icon name="icon:premium" mode="svg" size="16px" class="rating-info__icon" />
             <span class="verify-text verify-text--lg">Документы проверены</span>
             <span class="verify-text verify-text--sm">Проверен</span>
             <span>•</span>
         </template>
 
         <template v-if="score">
-            <img src="/assets/icons/star.svg" alt="Рейтинг">
+            <icon name="icon:star" size="16px" class="rating-info__icon" />
             <span>{{ score }}</span>
             <span>•</span>
         </template>
@@ -40,11 +40,21 @@ const comments = computed(() => {
     display: flex;
     align-items: center;
     gap: 4px;
+
+    &__icon {
+        color: $c-primary;
+    }
 }
 
 .verify-text {
     &--sm {
         display: none;
+    }
+}
+
+.icon-premium {
+    &__check {
+        stroke: $c-gray-1;
     }
 }
 
