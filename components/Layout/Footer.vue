@@ -68,7 +68,7 @@
     gap: 6px;
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 960px) {
     .sitemap {
         flex-direction: column;
 

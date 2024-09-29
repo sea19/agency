@@ -116,7 +116,7 @@ watch(selectedTab, () => {
     }
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 960px) {
     .page-block {
         &__content {
             padding: 0 16px;

@@ -14,7 +14,7 @@
                 type="password"
             />
 
-            <v-btn :disabled="isDisabled" :loading="loading" @click="onSubmit">Войти</v-btn>
+            <v-btn :disabled="isDisabled" :loading="loading" type="submit" @click="onSubmit">Войти</v-btn>
         </v-form>
     </v-card>
 </template>

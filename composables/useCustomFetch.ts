@@ -1,9 +1,6 @@
 import type { UseFetchOptions } from 'nuxt/app';
 import { useAuthStore } from '~/store/auth';
 
-const authStore = useAuthStore();
-const { refreshToken } = authStore;
-
 export function useCustomFetch<T>(
     url: string | (() => string),
     options: UseFetchOptions<T> = {},
@@ -13,6 +10,9 @@ export function useCustomFetch<T>(
         retryStatusCodes: [401],
 
         async onResponseError({ response }) {
+            const authStore = useAuthStore();
+            const { refreshToken } = authStore;
+
             if (response.status === 401) {
                 await refreshToken();
             }

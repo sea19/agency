@@ -81,7 +81,7 @@ const filteredProducts = computed(() => {
         gap: 24px;
     }
 
-    @media screen and (max-width: 950px) {
+    @media screen and (max-width: 960px) {
         padding: 0 16px;
     }
 

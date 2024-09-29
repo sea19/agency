@@ -37,7 +37,9 @@ export const useAuthStore = defineStore('authStore', () => {
 
         try {
             await $fetch('/auth/logout', { method: 'POST' });
+
             resetAuthentication();
+            navigateTo('/login');
         }
         catch (error) {
             console.log(error);

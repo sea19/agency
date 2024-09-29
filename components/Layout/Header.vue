@@ -1,8 +1,14 @@
 <template>
     <header class="page-header">
-        <button class="menu-button">
-            <img src="/assets/icons/burger-menu.svg" alt="Меню">
-        </button>
+        <v-menu>
+            <template #activator="{ props }">
+                <button v-bind="props" class="menu-button">
+                    <img src="/assets/icons/burger-menu.svg" alt="Меню">
+                </button>
+            </template>
+
+            <LayoutHeaderMenuList />
+        </v-menu>
 
         <nuxt-link to="/">
             <h1 class="logo">Annoncé</h1>
@@ -33,22 +39,13 @@
 
             <v-menu v-if="isAuthenticated">
                 <template #activator="{ props }">
-                    <button class="profile-button">
-                        <img src="/assets/icons/burger-menu.svg" alt="Меню" v-bind="props">
+                    <button v-bind="props" class="profile-button">
+                        <img src="/assets/icons/burger-menu.svg" alt="Меню">
                         <img src="/assets/img/avatar.webp" alt="Аватар" class="avatar">
                     </button>
                 </template>
 
-                <v-list>
-                    <v-list-item
-                        v-for="item in menuItems"
-                        :key="item.value"
-                        :value="item.value"
-                        @click="item.handler"
-                    >
-                        <v-list-item-title>{{ item.title }}</v-list-item-title>
-                    </v-list-item>
-                </v-list>
+                <LayoutHeaderMenuList />
             </v-menu>
 
             <nuxt-link v-else to="/login" class="login-button">
@@ -63,11 +60,6 @@ import { useAuthStore } from '~/store/auth';
 
 const authStore = useAuthStore();
 const { isAuthenticated } = storeToRefs(authStore);
-const { logout } = authStore;
-
-const menuItems = reactive([
-    { title: 'Выйти', value: 'logout', handler: logout },
-]);
 </script>
 
 <style scoped lang="scss">
@@ -159,7 +151,7 @@ const menuItems = reactive([
     font-weight: 500;
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 960px) {
     .catalog-button,
     .city-button,
     .advertising-button,

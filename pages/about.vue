@@ -77,7 +77,7 @@ const { data: companyInfo } = await useCustomFetch<ICompanyInfo>(`/company/info/
     }
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 960px) {
     .page-about {
         padding: 24px 0 48px;
 

@@ -21,6 +21,8 @@
     position: fixed;
     bottom: 0;
 
+    z-index: 50;
+
     width: 100%;
 
     display: flex;
