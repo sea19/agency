@@ -52,7 +52,7 @@ const { data: companyRating } = await useCustomFetch<ICompanyRating>(`/company/r
 
         font-size: 24px;
         font-weight: 600;
-        line-height: normal;
+        line-height: 28px;
     }
 
     &__number-button {

@@ -34,7 +34,7 @@ const $value = defineModel<ModelValue>();
 
     .v-slide-group__content {
         display: flex;
-        gap: 4px;
+        gap: 8px;
     }
 
     &.v-tabs--density-default {

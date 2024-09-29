@@ -25,6 +25,10 @@
 import { useAuthStore } from '~/store/auth';
 import type { ICredentials } from '~/types/Credentials';
 
+useHead({
+    title: 'Вход',
+});
+
 definePageMeta({
     layout: false,
     middleware: ['login'],

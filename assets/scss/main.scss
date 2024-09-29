@@ -37,6 +37,11 @@ h2 {
     margin-bottom: 8px;
 }
 
+.divider {
+    border-color: $c-gray-5;
+    opacity: 1;
+}
+
 
 @media screen and (max-width: 768px) {
     h2 {

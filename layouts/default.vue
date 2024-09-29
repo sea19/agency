@@ -42,7 +42,7 @@ const selectedTab = ref('/');
 
 const tabs = reactive([
     { label: 'Товары и услуги', value: '/' },
-    { label: 'Агенты', text: 5, value: '/agents', isAuthRoute: true },
+    { label: 'Агенты', text: 7, value: '/agents', isAuthRoute: true },
     { label: 'О компании', value: '/about' },
 ]);
 
@@ -100,14 +100,14 @@ watch(selectedTab, () => {
 
     &__footer {
         background: $c-gray-1;
-        border-top: 1px solid $c-gray-3;
+        border-top: 2px solid $c-gray-3;
     }
 }
 
 .page-subheader {
     display: flex;
     flex-direction: column;
-    border-bottom: 1px solid $c-gray-5;
+    border-bottom: 2px solid $c-gray-5;
 
     &__tabs {
         margin: 32px 0;
@@ -120,6 +120,10 @@ watch(selectedTab, () => {
     .page-block {
         &__content {
             padding: 0 16px;
+        }
+
+        &__header {
+            height: 56px;
         }
     }
 

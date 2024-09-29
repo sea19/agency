@@ -51,8 +51,8 @@ const fullName = computed(() => `${props.firstName} ${props.lastName}`);
     &__image {
         grid-row-start: span 2;
 
-        width: 100%;
-        height: 100%;
+        width: 140px;
+        height: 140px;
 
         object-fit: cover;
 
@@ -64,17 +64,26 @@ const fullName = computed(() => `${props.firstName} ${props.lastName}`);
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 3;
+
+        line-height: 24px;
     }
 }
 
 .card-header {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+
+    &__name {
+        margin: 4px 0;
+    }
 }
 
 @media screen and (max-width: 768px) {
     .agent-card {
+        border-radius: 16px;
+
+        padding: 16px;
+
         grid-template-columns: 48px auto;
         gap: 8px 12px;
 
@@ -96,6 +105,8 @@ const fullName = computed(() => `${props.firstName} ${props.lastName}`);
 
     .card-header {
         &__name {
+            margin: 2px 0 4px;
+
             font-size: 20px;
             line-height: 24px;
         }

@@ -8,6 +8,10 @@
 import { useCompanyStore } from '~/store/company';
 import type { IAgent } from '~/types/entities';
 
+useHead({
+    title: 'Агенты',
+});
+
 definePageMeta({
     middleware: ['auth'],
 });
@@ -29,6 +33,7 @@ const { data: agents } = await useCustomFetch<IAgent[]>(`/company/agent/${compan
 
     @media screen and (max-width: 768px) {
         padding: 24px 0 48px;
+        gap: 8px;
     }
 }
 </style>

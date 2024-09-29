@@ -50,6 +50,7 @@
 
     color: $c-gray-4;
     font-weight: 500;
+    line-height: 24px;
 
     &__element {
         &--mobile {
@@ -65,7 +66,10 @@
 
 .language-button {
     display: flex;
+    align-items: center;
     gap: 6px;
+
+    padding: 4px 6px;
 }
 
 @media screen and (max-width: 960px) {

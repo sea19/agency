@@ -3,7 +3,7 @@
         <template #item="itemProps">
             <slot name="item" v-bind="itemProps">
                 <div class="ui-select-item">
-                    <v-divider v-if="itemProps.item.raw.type === 'divider'" />
+                    <v-divider v-if="itemProps.item.raw.type === 'divider'" class="divider" />
 
                     <v-list-subheader v-else-if="itemProps.item.raw.type === 'subheader'">
                         <span class="ui-select-item__subheader">{{ itemProps.item.title }}</span>
@@ -75,7 +75,7 @@ const $value = defineModel<ModelValue>();
     }
 
     .v-field--variant-solo {
-        border: 1px solid $c-gray-7;
+        border: 1px solid $c-gray-3;
         border-radius: 12px;
 
         background: $c-gray-6;

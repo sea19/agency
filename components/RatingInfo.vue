@@ -41,6 +41,9 @@ const comments = computed(() => {
     align-items: center;
     gap: 4px;
 
+    font-size: 15px;
+    line-height: 20px;
+
     &__icon {
         color: $c-primary;
     }

@@ -19,6 +19,10 @@ import { mapCategory } from '~/helpers/mapCategory';
 import type { ICategoryElement, ISubcategoryElement } from '~/helpers/mapCategory';
 import type { IProduct } from '~/types/entities';
 
+useHead({
+    title: 'Товары и услуги',
+});
+
 const companyStore = useCompanyStore();
 const { companyId } = storeToRefs(companyStore);
 

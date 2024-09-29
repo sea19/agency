@@ -32,6 +32,10 @@
 import { useCompanyStore } from '~/store/company';
 import type { ICompanyInfo } from '~/types/entities';
 
+useHead({
+    title: 'О компании',
+});
+
 const companyStore = useCompanyStore();
 const { companyId } = storeToRefs(companyStore);
 

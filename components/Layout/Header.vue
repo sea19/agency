@@ -75,6 +75,7 @@ const { isAuthenticated } = storeToRefs(authStore);
 
 .logo {
     width: 144px;
+    padding-left: 8px;
 
     font-family: 'NotoSerif', sans-serif;
     font-size: 28px;
@@ -110,7 +111,6 @@ const { isAuthenticated } = storeToRefs(authStore);
     height: 32px;
     align-self: center;
     opacity: 1;
-    border-color: $c-gray-5;
 }
 
 .advertising-button {
@@ -170,7 +170,11 @@ const { isAuthenticated } = storeToRefs(authStore);
     }
 
     .bag-button {
-        display: block;
+        display: flex;
+    }
+
+    .logo {
+        padding-left: 38px;
     }
 }
 </style>
