@@ -13,16 +13,16 @@
 </template>
 
 <script setup lang="ts">
-import { storeToRefs } from 'pinia';
 import { useCompanyStore } from '~/store/company';
 
 import { mapCategory } from '~/helpers/mapCategory';
 import type { ICategoryElement, ISubcategoryElement } from '~/helpers/mapCategory';
+import type { IProduct } from '~/types/entities';
 
 const companyStore = useCompanyStore();
 const { companyId } = storeToRefs(companyStore);
 
-const { data: products } = await useFetch(`/products/${companyId.value}`);
+const { data: products } = await useCustomFetch<IProduct[]>(`/products/${companyId.value}`);
 
 const selectedCategory = ref('all');
 

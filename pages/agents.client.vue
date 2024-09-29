@@ -5,13 +5,17 @@
 </template>
 
 <script setup lang="ts">
-import { storeToRefs } from 'pinia';
 import { useCompanyStore } from '~/store/company';
+import type { IAgent } from '~/types/entities';
+
+definePageMeta({
+    middleware: ['auth'],
+});
 
 const companyStore = useCompanyStore();
 const { companyId } = storeToRefs(companyStore);
 
-const { data: agents } = await useFetch(`/company/agent/${companyId.value}`);
+const { data: agents } = await useCustomFetch<IAgent[]>(`/company/agent/${companyId.value}`);
 </script>
 
 <style scoped lang="scss">

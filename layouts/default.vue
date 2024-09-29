@@ -7,9 +7,11 @@
         <div class="page-block page-subheader">
             <CompanyInfo show-phone-button class="page-subheader__company-info" />
 
-            <div class="page-subheader__tabs">
-                <UITabs v-model="selectedTab" :tabs="tabs" align-tabs="center" />
-            </div>
+            <client-only>
+                <div class="page-subheader__tabs">
+                    <UITabs v-model="selectedTab" :tabs="filteredTabs" align-tabs="center" />
+                </div>
+            </client-only>
         </div>
 
         <div class="page-block page-block__main">
@@ -25,7 +27,11 @@
 </template>
 
 <script setup lang="ts">
+import { useAuthStore } from '~/store/auth';
 import { useCompanyStore } from '~/store/company';
+
+const authStore = useAuthStore();
+const { isAuthenticated } = storeToRefs(authStore);
 
 const companyStore = useCompanyStore();
 // Хардкод id компании
@@ -36,9 +42,15 @@ const selectedTab = ref('/');
 
 const tabs = reactive([
     { label: 'Товары и услуги', value: '/' },
-    { label: 'Агенты', text: 5, value: '/agents' },
+    { label: 'Агенты', text: 5, value: '/agents', isAuthRoute: true },
     { label: 'О компании', value: '/about' },
 ]);
+
+const filteredTabs = computed(() => {
+    if (isAuthenticated.value) return tabs;
+
+    return tabs.filter(({ isAuthRoute }) => !isAuthRoute);
+});
 
 watch(router.currentRoute, () => {
     const { currentRoute } = router;

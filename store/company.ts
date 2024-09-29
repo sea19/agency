@@ -1,4 +1,3 @@
-import { defineStore } from 'pinia';
 import type { Id } from '~/types/Id';
 
 type CompanyId = Id | null;

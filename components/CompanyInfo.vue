@@ -18,8 +18,8 @@
 </template>
 
 <script setup lang="ts">
-import { storeToRefs } from 'pinia';
 import { useCompanyStore } from '~/store/company';
+import type { ICompany, ICompanyRating } from '~/types/entities';
 
 interface IProps {
     showPhoneButton?: boolean;
@@ -30,8 +30,8 @@ defineProps<IProps>();
 const companyStore = useCompanyStore();
 const { companyId } = storeToRefs(companyStore);
 
-const { data: companyInfo } = await useFetch(`/company/${companyId.value}`);
-const { data: companyRating } = await useFetch(`/company/rating/${companyId.value}`);
+const { data: companyInfo } = await useCustomFetch<ICompany>(`/company/${companyId.value}`);
+const { data: companyRating } = await useCustomFetch<ICompanyRating>(`/company/rating/${companyId.value}`);
 </script>
 
 <style scoped lang="scss">

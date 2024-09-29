@@ -8,11 +8,13 @@
             <h1 class="logo">Annoncé</h1>
         </nuxt-link>
 
-        <button v-if="isAuthorized" class="bag-button">
-            <UIBadge :content="1">
-                <img src="/assets/icons/bag.svg" alt="Корзина">
-            </UIBadge>
-        </button>
+        <client-only>
+            <button v-if="isAuthenticated" class="bag-button">
+                <UIBadge :content="1">
+                    <img src="/assets/icons/bag.svg" alt="Корзина">
+                </UIBadge>
+            </button>
+        </client-only>
 
         <button class="catalog-button">
             <img src="/assets/icons/category.svg" alt="Категории">
@@ -24,27 +26,48 @@
             <span>Ростов-на-Дону</span>
         </button>
 
-        <v-divider :thickness="1" class="divider" vertical />
+        <client-only>
+            <v-divider :thickness="1" class="divider" vertical />
 
-        <button v-if="isAuthorized" class="advertising-button">Разместить объявление</button>
+            <button v-if="isAuthenticated" class="advertising-button">Разместить объявление</button>
 
-        <button v-if="isAuthorized" class="profile-button">
-            <img src="/assets/icons/burger-menu.svg" alt="Меню">
-            <img src="/assets/img/avatar.webp" alt="Аватар" class="avatar">
-        </button>
+            <v-menu v-if="isAuthenticated">
+                <template #activator="{ props }">
+                    <button class="profile-button">
+                        <img src="/assets/icons/burger-menu.svg" alt="Меню" v-bind="props">
+                        <img src="/assets/img/avatar.webp" alt="Аватар" class="avatar">
+                    </button>
+                </template>
 
-        <nuxt-link v-else to="/login" class="login-button">
-            <button>Войти</button>
-        </nuxt-link>
+                <v-list>
+                    <v-list-item
+                        v-for="item in menuItems"
+                        :key="item.value"
+                        :value="item.value"
+                        @click="item.handler"
+                    >
+                        <v-list-item-title>{{ item.title }}</v-list-item-title>
+                    </v-list-item>
+                </v-list>
+            </v-menu>
+
+            <nuxt-link v-else to="/login" class="login-button">
+                <button>Войти</button>
+            </nuxt-link>
+        </client-only>
     </header>
 </template>
 
 <script setup lang="ts">
-import { storeToRefs } from 'pinia';
 import { useAuthStore } from '~/store/auth';
 
-const companyStore = useAuthStore();
-const { isAuthorized } = storeToRefs(companyStore);
+const authStore = useAuthStore();
+const { isAuthenticated } = storeToRefs(authStore);
+const { logout } = authStore;
+
+const menuItems = reactive([
+    { title: 'Выйти', value: 'logout', handler: logout },
+]);
 </script>
 
 <style scoped lang="scss">
